@@ -1,5 +1,4 @@
-# SD-2_BogdanVeniamin
-
+# SD-2_
 Before start working check that following tools are present on your environment:
 - Java version "1.8" http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 - Maven https://maven.apache.org/download.cgi
