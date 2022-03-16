@@ -1,0 +1,31 @@
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)"
+             size = "medium" color="fff"
+             type="ball-newton-cradle"></ngx-spinner>
+<div class="container-fluid" *ngIf="post">
+  <div class="row">
+    <div class="col-10 text-center"><h2 class="title"><strong>{{ post.title }}</strong></h2></div>
+    <div class="col-1 text-center" (click)="editPost(post)" *ngIf="_getRole()== 'ADMIN'"><button class="btn btn-info">Edit</button></div>
+    <div class="col-1 text-center" *ngIf="_getRole() == 'ADMIN'"><button class="btn btn-info" (click)="_deletePost(post_id.toString())" routerLink="">Delete</button></div>
+  </div>
+  <h5>{{ post.description }}</h5>
+  <div class="row">
+    <div class="col-4" *ngFor="let addition of post.additions">
+      <div class="form-check">
+        <div class="card" (click)="addAddition(addition); checkAddition(addition.title)" [class.checked]="currentAddition(addition.title)">
+          <div class="card-body">
+            <div class="card-title">
+              <div class="row">
+                <div class="col-9">{{ addition.title }}</div>
+                <div class="col-3"><div class="price">{{ addition.price }}/MO</div></div>
+              </div>
+            </div>
+            <hr>
+            <div class="card-text">
+              {{ addition.description }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

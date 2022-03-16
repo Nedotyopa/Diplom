@@ -1,0 +1,5 @@
+#ignore all "iml" files
+sd4parent/*.iml
+sd4parent/be/*.iml
+sd4parent/fapu/*.iml
+.idea/

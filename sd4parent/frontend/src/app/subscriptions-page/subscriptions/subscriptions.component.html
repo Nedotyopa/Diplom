@@ -1,0 +1,51 @@
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)"
+             size = "medium" color="fff"
+             type="ball-newton-cradle"></ngx-spinner>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12" *ngFor="let sub of subscriptionPosts; let i = index">
+      <div class="our-services-wrapper mb-60">
+        <div class="services-inner">
+          <!--<div class="our-services-img">-->
+            <!--<a [routerLink]="['/posts', sub.post.id]"><img src="../../../assets/images/open.png" width="68px" alt=""></a>-->
+          <!--</div>-->
+          <div class="our-services-text">
+            <div class="row">
+              <h4 class="col-8">{{ sub.post.title }}</h4>
+              <h4 class="col-4">{{ sub.post.price }}/MO</h4>
+            </div>
+            <p class="description">{{ _shortDescription(sub.post.description) }}</p>
+          </div>
+          <div class="text-center warn" *ngIf="!sub.status">Subscription is frozen</div>
+          <div class="container text-center">
+            <h4>Left: {{ sub.duration }} days</h4>
+            <button id="myBtn-1" class="btn btn-info btn-footer" [routerLink]="['/posts', sub.post.id]" >Open post</button>
+            <button *ngIf="sub.status" id="myBtn-1" class="btn btn-info btn-footer" [disabled]="!handler" (click)="openModal(template, sub)">Continue subscription now</button>
+            <button id="myBtn-1" class="btn btn-info btn-footer del" [disabled]="!handler" (click)="cancelSubscription(sub.id)">Cancel subscription now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #template>
+    <div class="container" *ngIf="resultCondition">
+      <div class="card-deck text-center">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ resultCondition.price }}$ <small class="text-muted">({{ resultCondition.discount }}% discount)</small></h5>
+            <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+              <div class="button-group">
+                <div class="row">
+                  <div class="col-2" *ngFor="let num of numbers">
+                    <button type="button" class="btn btn-custom" [class.current]="currentDuration == num" (click)="_computePrice(num, currentPost.discount, currentPost.price); currentDuration = num">{{ num }}</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" id="myBtn" class="btn btn-lg btn-primary" (click)="extendSubscriptions(resultCondition)" >Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</ng-template>

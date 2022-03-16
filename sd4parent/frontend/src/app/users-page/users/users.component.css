@@ -1,0 +1,37 @@
+.container-fluid {
+  margin-top: 40px;
+  width: 1300px;
+}
+
+h5 {
+  margin-top: 10px;
+}
+
+.btn-info {
+  border-radius: 0;
+  border-color: #4ABDAC;
+  background-color: #4ABDAC;
+}
+
+.btn-info:hover {
+  border-color: #378C80;
+  background-color: #378C80;
+}
+
+.del {
+  background-color: #FC4A1A;
+  border-color: #FC4A1A;
+}
+
+.del:hover {
+  background-color: #C63B15;
+  border-color: #C63B15;
+}
+
+.table {
+  margin-top: 50px;
+}
+
+.form-group {
+  width: 100px;
+}

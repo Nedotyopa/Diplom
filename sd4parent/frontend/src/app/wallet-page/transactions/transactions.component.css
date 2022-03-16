@@ -1,0 +1,41 @@
+.container-fluid {
+  margin-top: 60px;
+  width: 1300px;
+}
+
+.table {
+  background-color: #E7E5E7;
+}
+
+.cash {
+  font-size: 18px;
+  color: red;
+}
+
+.plus {
+  color: green;
+}
+
+span {
+  font-size: 10px;
+  color: black;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: #378C80;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.current {
+  color: #4ABDAC;
+}
+
+strong {
+  text-transform: uppercase;
+}
+

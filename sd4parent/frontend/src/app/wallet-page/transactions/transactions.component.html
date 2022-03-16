@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-9">
+      <h4>Transactions</h4>
+    </div>
+    <div class="col-1 text-center" *ngIf="handler">
+      <a (click)="setType('ALL')"><h5 [class.current]="currentType == 'ALL'">All</h5></a>
+    </div>
+    <div class="col-1 item" *ngIf="handler">
+      <a (click)="setType('CHARGES')"><h5 [class.current]="currentType == 'CHARGES'">Charges</h5></a>
+    </div>
+    <div class="col-1 item" *ngIf="handler">
+      <a (click)="setType('REFILL')"><h5 [class.current]="currentType == 'REFILL'">Refill</h5></a>
+    </div>
+  </div>
+  <table class="table" *ngIf="currentType == 'ALL' || !handler">
+    <tbody>
+    <tr  *ngFor="let transaction of transactions">
+      <td>{{ _subDate(transaction.date) }}</td>
+      <td><strong>{{ transaction.title }}</strong></td>
+      <td class="text-center cash {{ transaction.action.toLowerCase() }}">{{ transaction.amount }}<span> USD</span></td>
+    </tr>
+    </tbody>
+  </table>
+  <table class="table" *ngIf="currentType == 'CHARGES'">
+    <tbody>
+    <tr  *ngFor="let transaction of chargeTransactions">
+      <td>{{ _subDate(transaction.date) }}</td>
+      <td><strong>{{ transaction.title }}</strong></td>
+      <td class="text-center cash {{ transaction.action.toLowerCase() }}">{{ transaction.amount }}<span> USD</span></td>
+    </tr>
+    </tbody>
+  </table>
+  <table class="table" *ngIf="currentType == 'REFILL'">
+    <tbody>
+    <tr  *ngFor="let transaction of refillTransactions">
+      <td>{{ _subDate(transaction.date) }}</td>
+      <td><strong>{{ transaction.title }}</strong></td>
+      <td class="text-center cash {{ transaction.action.toLowerCase() }}">{{ transaction.amount }}<span> USD</span></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,26 @@
+.title {
+  text-transform: uppercase;
+  margin-left: 250px;
+}
+
+.container-fluid {
+  margin-top: 20px;
+  width: 1100px;
+  border-color: #0d0d0d;
+}
+
+.checked {
+  background-color: #378C80;
+  color: white;
+}
+
+.card {
+  height: 200px;
+  margin-bottom: 15px;
+}
+
+.card:hover {
+  background-color: #378C80;
+  color: white;
+  cursor: pointer;
+}

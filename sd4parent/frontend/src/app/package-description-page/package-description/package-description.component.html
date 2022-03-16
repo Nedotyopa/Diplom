@@ -1,0 +1,28 @@
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)"
+             size = "medium" color="fff"
+             type="ball-newton-cradle"></ngx-spinner>
+<div class="container-fluid" *ngIf="pack">
+  <div class="row">
+    <div class="col-10 text-center"><h2 class="title"><strong>{{ pack.title }}</strong></h2></div>
+    <div class="col-1 text-center" *ngIf="getRole() == 'ADMIN'"><button class="btn btn-info" (click)="deletePackage(packageId)" routerLink="">Delete</button></div>
+  </div>
+  <h5>{{ pack.description }}</h5>
+  <div class="row posts">
+    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12" *ngFor="let post of pack.posts">
+      <div class="our-services-wrapper mb-60">
+        <div class="services-inner" [routerLink]="['/posts', post.id]">
+          <!--<div class="our-services-img">-->
+          <!--<a [routerLink]="['posts', post.id]"><img src="../../../assets/images/open.png" width="68px" alt=""></a>-->
+          <!--</div>-->
+          <div class="our-services-text">
+            <div class="row">
+              <h4 class="col-8">{{ post.title }}</h4>
+              <h4  class="col-4">{{ post.price }}/MO</h4>
+            </div>
+            <p>{{ _shortDescription(post.description) }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

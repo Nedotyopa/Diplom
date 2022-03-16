@@ -1,0 +1,195 @@
+#nick {
+  font-size: 20px;
+  color: #4d4d4d;
+}
+
+.card-btn {
+  margin-left: 150px;
+  position: relative;
+  bottom: 10px;
+  background-color: #76D7C4;
+  border-color: #76D7C4;
+}
+
+.navbar {
+  background-color: #DFDCE3;
+}
+
+#btn-nav {
+  margin-top: 5px;
+  color: white;
+  /*background-color: #F96D06;*/
+  background-color: #F7B733;
+  border-color: #F7B733;
+  border-width: 1px;
+  border-radius: 0px;
+}
+
+#btn-nav:hover {
+  background-color: #DFA52D;
+  color: white;
+  border-color: #DFA52D;
+}
+
+html {
+  font-family: "Century Gothic";
+}
+
+.nav-link {
+  color: black;
+  font-size: 25px;
+}
+
+.nav-item {
+  border-bottom: 2px solid #DFDCE3;
+}
+
+.nav-item:hover {
+  border-bottom: 2px solid #F7B733;
+  color: black;
+}
+
+.active {
+  border-bottom: 2px solid #F7B733;
+}
+
+/* FORM TYPOGRAPHY*/
+
+input[type=button], input[type=submit], input[type=reset]  {
+  background-color: #F7B733;
+  border: none;
+  color: white;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  margin: 5px 20px 40px 120px;
+}
+
+input[type=button].forgot {
+  margin-left: 100px;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+  background-color: #DFA52D;
+  cursor: pointer;
+}
+
+input[type=text], input[type=password] {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 20px 42px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  border: 2px solid #f6f6f6;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #fff;
+  border: 2px solid #F7B733;
+}
+
+input[type=text]::placeholder {
+  color: #cccccc;
+}
+
+h1{
+  color: #F7B733;
+  margin-left: 130px;
+}
+
+.form-group {
+  text-align: center;
+}
+
+.modal-footer {
+  color: silver;
+}
+
+.left {
+  padding-right: 15px;
+}
+
+.center {
+  padding-right: 15px;
+}
+
+/* OTHERS */
+
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 80px;
+  color: #CCC9CF;
+}
+
+.fa-facebook:hover {
+  color: #3B5998;
+}
+
+.fa-google-plus:hover {
+  color: #DB4437;
+}
+
+.links {
+  margin-right: 100px;
+}
+
+.social {
+  text-align: center;
+}
+
+.post {
+  margin-top: 10px;
+  margin-left: 215px;
+}
+
+.pack {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.box {
+  border: 1px solid black;
+  margin-top: 18px;
+  margin-left: 800px;
+  font-size: 13px;
+  height: 25px;
+  width: 40px;
+  border-radius: 10px;
+}
+
+.alert-danger {
+  width: 398px;
+  margin-left: 34px;
+  height: 40px;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.incorrect-form {
+  border-color: red;
+  background-color: pink;
+}
+
+span {
+  font-size: 14px;
+  color: red;
+}
+
+#email {
+  margin-right: 120px;
+}

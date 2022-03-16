@@ -1,0 +1,30 @@
+<div class="container" *ngIf="resultCondition">
+  <div class="card-deck text-center">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ resultCondition.price }}$ <small class="text-muted">({{ resultCondition.discount }}% discount)</small></h5>
+        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+          <h4 class="name">Months</h4>
+          <div *ngFor="let num of numbers" class="button-group">
+            <button type="button" class="btn btn-custom" [class.current]="currentDuration == num" (click)="_computePrice(num, post.discount, post.price); currentDuration = num">{{ num }}</button>
+          </div>
+        </div>
+        <button type="button" id="myBtn" class="btn btn-lg btn-primary" [disabled]="!auth" (click)="_openModal(template)" >Subscribe</button>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #template>
+  <div class="modal-header">
+    <h1 class="modal-title">Subscription details</h1>
+  </div>
+  <div class="modal-body">
+    <h4>Subscription term: {{ resultCondition.duration }} months</h4>
+    <h4>All price: {{ resultCondition.price }}$</h4>
+    <h4>Discount: {{ resultCondition.discount }}%</h4>
+  </div>
+  <div [hidden]="subscribeAccess == 'Successful'" class="text-center">
+    <span>{{ subscribeAccess }}</span>
+  </div>
+  <input type="button" class="end" value="Subscribe" (click)="_subscribe()">
+</ng-template>

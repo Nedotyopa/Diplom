@@ -1,0 +1,51 @@
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)"
+             size = "medium" color="fff"
+             type="ball-newton-cradle"></ngx-spinner>
+<div class="container-fluid">
+  <div class="row type">
+    <div class="col-6 text-right">
+      <a (click)="setType()">Posts</a>
+    </div>
+    <div class="col-4 text-left current">
+      <a>Packages</a>
+    </div>
+    <div class="col-2 text-center">
+      <div class="btn-group">
+        <button class="btn btn-custom" (click)="setQuantity(3);" [class.current-qt]="quantity == 3">3</button>
+        <button class="btn btn-custom" (click)="setQuantity(6); " [class.current-qt]="quantity == 6">6</button>
+        <button class="btn btn-custom" (click)="setQuantity(9);" [class.current-qt]="quantity == 9">9</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12" *ngFor="let package of packages">
+      <div class="our-services-wrapper mb-60">
+        <div class="services-inner" [routerLink]="['packages', package.id]">
+          <!--<div class="our-services-img">-->
+          <!--<a [routerLink]="['posts', post.id]"><img src="../../../assets/images/open.png" width="68px" alt=""></a>-->
+          <!--</div>-->
+          <div class="our-services-text">
+            <div class="row">
+              <h4 class="col-8">{{ package.title }}</h4>
+              <h4  class="col-4">{{ getPrice(package) }}/MO</h4>
+            </div>
+            <p>{{ _shortDescription(package.description) }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pagination d-flex justify-content-center" *ngIf="packages">
+  <ul class="pagination">
+    <li class="page-item" [class.disabled]="currentPage <= 1">
+      <a class="page-link" (click)="getPackagesByPage(currentPage-1); currentPage = currentPage-1">Previous</a>
+    </li>
+    <li class="page-item" [class.disabled]="currentPage == page" *ngFor="let page of pages">
+      <a class="page-link" (click)="getPackagesByPage(page); currentPage = page">{{ page }}</a>
+    </li>
+    <li class="page-item" [class.disabled]="currentPage >= total">
+      <a class="page-link" (click)="getPackagesByPage(currentPage+1); currentPage = currentPage+1">Next</a>
+    </li>
+  </ul>
+</div>

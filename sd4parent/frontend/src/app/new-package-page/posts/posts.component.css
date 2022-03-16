@@ -1,0 +1,59 @@
+.checked {
+  background-color: #378C80;
+  color: white;
+}
+
+.mb-60 {
+  margin-bottom: 60px;
+}
+.services-inner {
+  border: 2px solid #378C80;
+  margin-left: 35px;
+  transition: .3s;
+  height: 200px;
+}
+.services-inner:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.our-services-text {
+  padding-right: 10px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+.our-services-text {
+  overflow: hidden;
+  padding: 28px 0 25px;
+}
+.our-services-text h4 {
+  /*color: #222222;*/
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  padding-bottom: 10px;
+  position: relative;
+  text-transform: uppercase;
+}
+/*.our-services-text h4::before {*/
+  /*background: #ec6d48 none repeat scroll 0 0;*/
+  /*bottom: 0;*/
+  /*content: "";*/
+  /*height: 1px;*/
+  /*position: absolute;*/
+  /*width: 35px;*/
+/*}*/
+.our-services-wrapper:hover .services-inner {
+  background-color: #378C80;
+  color: white;
+
+}
+.our-services-text p {
+  margin-bottom: 0;
+}
+
+.posts {
+  margin-right: 35px;
+  margin-top: 30px;
+}

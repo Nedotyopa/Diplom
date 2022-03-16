@@ -1,0 +1,30 @@
+<div class="container" *ngIf="resultPrice">
+  <div class="card-deck text-center">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ resultPrice }}$ <small class="text-muted">({{ pack.discount }}% discount for every post)</small></h5>
+        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+          <h4 class="name">Months</h4>
+          <div *ngFor="let num of numbers" class="button-group">
+            <button type="button" class="btn btn-custom" [class.current]="currentDuration == num" (click)="packagePrice(pack, num); currentDuration = num">{{ num }}</button>
+          </div>
+        </div>
+        <button type="button" id="myBtn" class="btn btn-lg btn-primary"(click)="_openModal(template)" >Subscribe</button>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #template>
+  <div class="modal-header">
+    <h1 class="modal-title">Subscription details</h1>
+  </div>
+  <div class="modal-body">
+    <h4>Subscription term: {{ currentDuration }} months</h4>
+    <h4>All price: {{ resultPrice }}$</h4>
+  </div>
+  <div [hidden]="subscribeAccess == 'Successful'" class="text-center warn">
+    <span>{{subscribeAccess}}</span>
+  </div>
+  <input type="button" class="end" value="Subscribe" (click)="subscribe(pack)">
+</ng-template>
+

@@ -1,0 +1,18 @@
+.container {
+  margin-top: 30px;
+}
+
+textarea {
+  height: 150px;
+}
+
+.btn-post {
+  background-color: #4ABDAC;
+  border-color: #4ABDAC;
+  border-radius: 0;
+}
+
+.btn-post:hover {
+  background-color: #378C80;
+  border-color: #378C80;
+}

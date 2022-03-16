@@ -1,0 +1,36 @@
+.card {
+  border: none;
+  background-color: #DFDCE3;
+}
+
+span {
+  font-size: 15px
+}
+
+h5 {
+  font-size: 18px;
+}
+
+textarea {
+  margin-bottom: 10px;
+}
+
+.field {
+  margin-top: 10px;
+  margin-bottom: 20px
+}
+
+.container {
+  background-color: #DFDCE3;
+}
+
+#saveBtn {
+  border-radius: 0;
+  border-color: #4ABDAC;
+  background-color: #4ABDAC;
+}
+
+#saveBtn:hover {
+  border-color: #378C80;
+  background-color: #378C80;
+}

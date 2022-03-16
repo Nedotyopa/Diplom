@@ -1,0 +1,15 @@
+<div class="row posts">
+  <div class="col-3" *ngFor="let post of posts">
+    <div class="our-services-wrapper mb-60">
+      <div class="services-inner" (click)="addPost(post)" [class.checked]="currentPost(post.title)">
+        <div class="our-services-text">
+          <div class="row">
+            <h4 class="col-7">{{ post.title }}</h4>
+            <h4  class="col-5">{{ post.price }}/MO</h4>
+          </div>
+          <p>{{ shortDescription(post.description) }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

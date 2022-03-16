@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="card" *ngFor="let comment of comments">
+    <div class="card-body">
+      <div class="card-title">
+        <span><strong>{{ comment.user.login }}</strong> commented {{ comment.date }}</span>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <h5>{{ comment.text }}</h5>
+        </div>
+        <div class="col-2">
+          <button *ngIf="checkUser(comment)" class="btn btn-info" (click)="deleteComment(comment.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="field" *ngIf="hasUser()">
+    <textarea class="form-control" name="description" id="inputTitle" placeholder="Write your comment here" [(ngModel)]="newComment.text"></textarea>
+    <button id="saveBtn" class="btn btn-info" (click)="saveComment(newComment)">Send</button>
+  </div>
+  <div class="field" *ngIf="!hasUser()">
+    <h5>Login to comment</h5>
+  </div>
+</div>

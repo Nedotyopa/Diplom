@@ -1,0 +1,21 @@
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)"
+             size = "medium" color="fff"
+             type="ball-newton-cradle"></ngx-spinner>
+<table class="table">
+  <tr *ngFor="let user of users">
+    <td scope="row">{{ user.login }}</td>
+    <td>{{ user.email }}</td>
+    <td>{{ user.lastDateLogin }}</td>
+    <td>{{ user.wallet.money }}</td>
+    <td>
+      <div class="form-group">
+        <input type="text" class="form-control ng-pristine ng-touched ng-invalid" [(ngModel)]="user.debt" #debt="ngModel" required
+        /><button class="btn btn-info" (click)="updateDebt(user)">Confirm</button>
+      </div>
+    </td>
+    <td><button class="btn btn-info" (click)="getSubscriptions(user.login)">Subscriptions</button></td>
+    <td>{{ user.count }}</td>
+    <td><button class="btn btn-info del" (click)="banUser(user.id)">{{ checkStatus(user.ban) }}</button></td>
+    <td><button class="btn btn-info del" (click)="_deleteUser(user.id)">Delete</button></td>
+  </tr>
+</table>
